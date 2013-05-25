@@ -93,11 +93,64 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+/*------------------------------
+    COLOURS
+    Blue - #6a97ae rgba(106,151,174,1)
+------------------------------*/
+
+body {
+    background-color: grey;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
+}
+
+.wrapper {
+    padding: 0;
+    height:100%;
+    width:100%;
+}
+
+/*------------------------------
+    MAIN NAV
+------------------------------*/
+
+/* Nav styling */
+header {
+    background-color: white;
+    padding: 0;
+}
+
+header h1 {
+    float:left;
+}
+
+header nav.main {
+    font-size: 1em;
+    font-weight: 900;
+    float: right;
+}
+
+header nav.main ul {
+    list-style: none;
+    margin:0;
+    padding:0;
+}
+
+header nav.main ul li {
+    display: block;
+    float:left;
+    background-color: red;
+}
 
 
 
+/* Center all content */
+section {
+    width:960px;
+    margin:0 auto;
+}
 
-
+/* Section Styling */
 
 
 
