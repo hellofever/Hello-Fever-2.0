@@ -271,6 +271,71 @@ header nav.main a:active {
     color: white;
 }
 
+/*------------------------------
+    SECTION 04 - Footer
+------------------------------*/
+
+footer {
+    padding: 0;
+    margin: 0;
+}
+
+footer p {
+    margin: 0;
+    padding: 0;
+    font-size: 1.2em;
+    color: #6a97ae;
+}
+
+footer #twitter{
+    float: left;
+    margin: 0;
+    padding: 2.1em;
+    width: 40%;
+    text-overflow: ellipsis;
+    display: inline;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+footer nav.social {
+    width: 55%;
+    float: right;
+}
+
+footer nav.social ul {
+    float: right;
+    padding: 0;
+    margin: 0;
+}
+
+footer nav.social ul li {
+    float: left;
+    padding: 0;
+    margin: 0;
+}
+
+footer nav.social ul li a {
+    display: block;
+    color:#6a97ae;
+    text-decoration: none;
+    background-color: transparent;
+    padding: 1.1em 1.4em;
+}
+
+footer nav.social ul li a:hover {
+    color:white;
+    background-color: #6a97ae;
+}
+
+
+/*------------------------------------------------------------
+--------------------------------------------------------------
+
+    HOMEPAGE
+
+--------------------------------------------------------------
+------------------------------------------------------------*/
 
 /*------------------------------
     SECTIONS
@@ -516,63 +581,59 @@ aside.benefit2 { right:0px; }
 aside.benefit3 { bottom: 0px; left: 0px;}
 aside.benefit4 { bottom:0px; right:0px;}
 
-/*------------------------------
-    SECTION 04 - Footer
-------------------------------*/
+/*------------------------------------------------------------
+--------------------------------------------------------------
 
-footer {
+    CONTACT PAGE
+
+--------------------------------------------------------------
+------------------------------------------------------------*/
+
+section.contact {
+    width:60%;
+}
+
+section.contact p {
+    margin-bottom: 2em;
     padding: 0;
-    margin: 0;
 }
 
-footer p {
-    margin: 0;
-    padding: 0;
-    font-size: 1.2em;
-    color: #6a97ae;
+section.contact a {
+    width:100%;
+    margin-top: 1em;
 }
 
-footer #twitter{
-    float: left;
-    margin: 0;
-    padding: 2.1em;
-    width: 40%;
-    text-overflow: ellipsis;
-    display: inline;
-    white-space: nowrap;
-    overflow: hidden;
+form {
+    background: white;
+    border-bottom: 5px solid #e7e7e7;
+    padding: 3em;
 }
 
-footer nav.social {
-    width: 55%;
-    float: right;
+form.contactForm label, form.contactForm p{
+    font-size: 1.5em;
+    font-weight: 400;
+    color: #6698ab;
 }
 
-footer nav.social ul {
-    float: right;
-    padding: 0;
-    margin: 0;
-}
-
-footer nav.social ul li {
-    float: left;
-    padding: 0;
-    margin: 0;
-}
-
-footer nav.social ul li a {
+form.contactForm label {
     display: block;
-    color:#6a97ae;
-    text-decoration: none;
-    background-color: transparent;
-    padding: 1.1em 1.4em;
-    font-size: 1.7em;
+    margin-bottom: 1em;
 }
 
-footer nav.social ul li a:hover {
-    color:white;
-    background-color: #6a97ae;
+input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding:10px;
+    font-size: 1em;
+    background: #f2f2f2;
+    border:0;
+    border-top:5px solid #e7e7e7;
 }
+
+textarea {
+    height: 25em;
+}
+
+
 
 /* ==========================================================================
    Helper classes
@@ -714,7 +775,7 @@ footer nav.social ul li a:hover {
 
 
 /* Tablet and Mobile*/
-@media only screen and (max-width : 960px) {
+@media only screen and (max-width : 959px) {
     
 
     section {
@@ -781,7 +842,7 @@ footer nav.social ul li a:hover {
     }
 
     /*------------------------------
-        footer
+        FOOTER
     ------------------------------*/
 
     footer {
@@ -811,6 +872,25 @@ footer nav.social ul li a:hover {
 
     footer nav.social ul li{
         float: left;
+    }
+
+    footer nav.social ul li a {
+        font-size: 1.2em;
+        padding: 1.8em 1.4em;
+    }
+
+    /*------------------------------
+        CONTACT
+    ------------------------------*/
+
+    section.contact {
+        width:90%;
+    }
+
+    form {
+        background: white;
+        border-bottom: 5px solid #e7e7e7;
+        padding: 2em;
     }
 }
 
