@@ -111,9 +111,51 @@ body {
     font-family: 'Quicksand', sans-serif;
     font-size: 10px;
     color: white;
-    
+    min-width: 320px;
 }
 
+/*font icons*/
+@font-face {
+    font-family: 'icomoon';
+    src:url('fonts/icomoon.eot');
+    src:url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.woff') format('woff'),
+        url('fonts/icomoon.ttf') format('truetype'),
+        url('fonts/icomoon.svg#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[data-icon]:before {
+    font-family: 'icomoon';
+    content: attr(data-icon);
+    speak: none;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+}
+
+.icon-twitter, .icon-facebook, .icon-vimeo, .icon-linkedin, .icon-pinterest, .icon-instagram {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    margin-right: 0.5em;
+    padding:1px 0 0 1px;
+}
+
+.icon-twitter:before    { content: "\e000"; }
+.icon-facebook:before   { content: "\e001"; }
+.icon-vimeo:before      { content: "\e002"; }
+.icon-linkedin:before   { content: "\e003"; }
+.icon-pinterest:before  { content: "\e004"; }
+.icon-instagram:before  { content: "\e005"; }
 
 /*------------------------------
     MAIN NAV
@@ -122,8 +164,8 @@ body {
 /*Image replacement*/
 h1.headerlogo {
     margin-left:0.7em;
-    width:156px;
-    height:27px;
+    width:150px;
+    height:30px;
     text-indent: -9999px;
     overflow: hidden;
     background:
@@ -131,14 +173,29 @@ h1.headerlogo {
         no-repeat
         left top
         transparent;
-    background-size:156px 27px;
+    background-size:contain;
 }
 
 /* Nav styling */
 header {
-    background-color: white;
+    border:0 solid black;
+    background-color: rgba(0,0,0,0.1);
+    color:white;
     padding: 0;
-    position:relative;
+    position:fixed;
+    width:100%;
+     -webkit-transition: all 250ms cubic-bezier(0.510, 0.005, 0.000, 0.990); 
+   -moz-transition: all 250ms cubic-bezier(0.510, 0.005, 0.000, 0.990); 
+    -ms-transition: all 250ms cubic-bezier(0.510, 0.005, 0.000, 0.990); 
+     -o-transition: all 250ms cubic-bezier(0.510, 0.005, 0.000, 0.990); 
+        transition: all 250ms cubic-bezier(0.510, 0.005, 0.000, 0.990); /* custom */
+
+    z-index: 3;
+}
+
+header:hover {
+    background-color: rgba(0,0,0,0.3);
+    padding: 1.5em 0;
 }
 
 header h1 {
@@ -153,7 +210,7 @@ header nav.main {
 
 header nav.main ul {
     list-style: none;
-    margin: 0;
+    margin: 0 1em 0;
 }
 
 header nav.main ul li {
@@ -162,10 +219,12 @@ header nav.main ul li {
 
 /*Nav A styling*/
 header nav.main a {
+    font-size: 1.0em;
     display: block;
     text-decoration: none;
-    color: #6a97ae;
+    background-color: transparent;
     padding: 18px;
+    color:white;
     -webkit-transition: all 0.05s linear;
     -moz-transition: all 0.05s linear;
     -o-transition: all 0.05s linear;
@@ -173,8 +232,43 @@ header nav.main a {
     transition: all 0.05s linear;
 }
 
+@-webkit-keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);}
+    40% {-webkit-transform: translateY(-30px);}
+    60% {-webkit-transform: translateY(-15px);}
+}
+
+@-moz-keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {-moz-transform: translateY(0);}
+    40% {-moz-transform: translateY(-30px);}
+    60% {-moz-transform: translateY(-15px);}
+}
+
+@-o-keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {-o-transform: translateY(0);}
+    40% {-o-transform: translateY(-30px);}
+    60% {-o-transform: translateY(-15px);}
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-30px);}
+    60% {transform: translateY(-15px);}
+}
+
+.bounce {
+    -webkit-animation-name: bounce;
+    -moz-animation-name: bounce;
+    -o-animation-name: bounce;
+    animation-name: bounce;
+}
+
 header nav.main a:hover {
     background-color: #6a97ae;
+    color: white;
+}
+
+header nav.main a:active {
+    background-color: #40555c;
     color: white;
 }
 
@@ -202,8 +296,8 @@ p {
 }
 
 h2 {
-    margin: 0 0 0.3em;
-    font-size: 6em;
+    margin: 0 0 1em;
+    font-size:5em;
     text-align: center;
 }
 
@@ -218,29 +312,57 @@ h4 {
 }
 
 /*------------------------------
+    Button Styles
+------------------------------*/
+
+a {
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 1.7em;
+    padding:1.2em 3em;
+    background-color: grey;
+    color: white;
+    
+    
+    /* Animation */
+    -webkit-transition: all 0.05s linear;
+    -moz-transition: all 0.05s linear;
+    -o-transition: all 0.05s linear;
+    -ms-transition: all 0.05s linear;
+    transition: all 0.05s linear;
+}
+
+/* button colours as classes */
+
+a.red {
+    background-color:#6e3c3c;
+    border-bottom: 5px solid;
+    border-color: #442222;
+}
+
+a.red:hover {
+    background-color:#7c4646;
+    position: relative;
+    bottom: 5px;
+}
+
+a.red:active {
+    background-color:#4e2c2c;
+    top:2px;
+}
+
+/*------------------------------
     SECTION 01 - Feature
 ------------------------------*/
 
 .section01 {
     border-bottom:10px solid #537893;
-    padding: 7em 0 10em;
+    padding: 10em 0 15em;
 }
 
 .section01 img {
-    width:100%;
-    opacity: 0.5;   
-}
-
-
-.section01 img:hover {
-    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    filter: alpha(opacity=0);
     opacity: 1;
-    -webkit-transition: all 0.5s linear;
-    -moz-transition: all 0.5s linear;
-    -o-transition: all 0.5s linear;
-    -ms-transition: all 0.5s linear;
-    transition: all 0.5s linear;
+    width:100%;
 }
 
 /* Nav styling */
@@ -266,7 +388,7 @@ footer {
 }
 
 .section02 article {
-    width:780px;
+    width:80%;
     margin: 0 auto;
     text-align: center;
 }
@@ -279,6 +401,11 @@ footer {
 /*------------------------------
     SECTION 03 - Skills
 ------------------------------*/
+
+.clickout {
+    padding-top: 5em;
+    text-align: center;
+}
 
 .section03 {
     padding: 15em 0;
@@ -294,21 +421,24 @@ footer {
 
 article.skill {
     padding: 0;
-    width: 33%;
+    width: 32%;
     float: left;
     text-align: center;
+    margin-right: 1%;
 }
 
 article #circleImage {
-    background-color: grey;
+    position:relative;
+    background-color: transparent;
     width: 29em;
     height: 29em;
     border-radius: 100%;
     margin: 0 auto 2em;
     overflow: hidden;
-    box-shadow: 0 10px 0 #78423e;
+    box-shadow: 0 5px 0 #78423e;
     border: 10px solid white;
 }
+
 
 
 /*------------------------------
@@ -316,14 +446,36 @@ article #circleImage {
 ------------------------------*/
 
 .section04 {
-    padding: 15em 0;
+    padding: 10em 0;
 }
 
 section.benefitsSection {
     position: relative;
     width: 940px;
-    height: 650px;
-    margin-top:5em;
+    min-height: 65em;
+    margin-top:10em;
+}
+
+section .insideCircle1 {
+    position: absolute;
+    width:700px;
+    height:700px;
+    border-radius: 100%;
+    background-color: transparent;
+    border: 3px solid white;
+    z-index: 1;
+    margin:1em auto 0;
+}
+
+section .insideCircle1:before {
+    content:"";
+    width:90%;
+    height:90%;
+    border-radius: 100%;
+    border: 3px dotted white;
+    margin:2.5% auto;
+    display: block;
+    padding: 15px;
 }
 
 section.benefitsSection img {
@@ -338,11 +490,13 @@ aside.benefit {
     background: url(../img/bg_lightblue.jpg) repeat left top transparent;
     background-color: #a5c7d5;
     position:absolute;
-    width: 30em;
-    height: 30em;
+    /*width: 30em;
+    height: 30em;*/
     border-radius: 100%;
     text-align: center;
     box-shadow: 0 5px 0 #507991;
+    z-index: 2;
+    border: 0px;
 }
 
 aside h4 {
@@ -362,6 +516,64 @@ aside.benefit1 { left:0px; }
 aside.benefit2 { right:0px; }
 aside.benefit3 { bottom: 0px; left: 0px;}
 aside.benefit4 { bottom:0px; right:0px;}
+
+/*------------------------------
+    SECTION 04 - Footer
+------------------------------*/
+
+footer {
+    padding: 0;
+    margin: 0;
+}
+
+footer p {
+    margin: 0;
+    padding: 0;
+    font-size: 1.2em;
+    color: #6a97ae;
+}
+
+footer #twitter{
+    float: left;
+    margin: 0;
+    padding: 2.1em;
+    width: 50%;
+    text-overflow: ellipsis;
+    display: inline;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+footer nav.social {
+    width: 50%;
+    float: right;
+}
+
+footer nav.social ul {
+    float: right;
+    padding: 0;
+    margin: 0;
+}
+
+footer nav.social ul li {
+    float: left;
+    padding: 0;
+    margin: 0;
+}
+
+footer nav.social ul li a {
+    display: block;
+    padding: 1.5em;
+    color:#6a97ae;
+    text-decoration: none;
+    font-size: 1.2em;
+    background-color: transparent;
+}
+
+footer nav.social ul li a:hover {
+    color:white;
+    background-color: #6a97ae;
+}
 
 /* ==========================================================================
    Helper classes
@@ -470,9 +682,154 @@ aside.benefit4 { bottom:0px; right:0px;}
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
+/*@media only screen and (min-width : 340px), only screen and (max-width : 640px) {
+
+}*/
+
+/* Tablet */
+@media only screen and (max-width : 960px) {
+    section {
+        width:80%;
+        margin:0 auto;
+    }
+
+    article.skill {
+        width: 100%;
+        padding-bottom: 3em;
+    }
+
+    /*------------------------------
+    SECTION 03 - Skills
+    ------------------------------*/
+
+    article #circleImage {
+        width: 27em;
+        height: 27em;
+    }
+
+    /*------------------------------
+        SECTION 04 - Benefits
+    ------------------------------*/
+
+    section.benefitsSection {
+        width: 80%;
+        margin-top: 2em;
+    }
+
+    section.benefitsSection img {
+        width: 100%;
+        margin: 0 auto 3em;
+        top: 0;
+        left: 0;
+        position: relative;
+    }
+
+    aside h4 {
+        padding: 0;
+    }
+
+
+    aside.benefit {
+        position:relative;
+        padding:1em;
+        margin:0 auto 3em;
+        width: 100%%;
+        border-radius: 3em;
+        text-align: center;
+        box-shadow: 0 5px 0 #507991;
+        z-index: 2;
+        border: 0px;
+    }
+
+    /*------------------------------
+        footer
+    ------------------------------*/
+
+    footer #twitter{
+        width: 100%;
+        white-space: ellipsis;
+    }
+
+    footer #twitter p{
+        margin: 0 auto;
+    }
+
+    footer nav.social {
+        width: 100%;
+        float: left;
+    }
+
+    footer nav.social ul {
+        float: left;
+    }
+
+    footer nav.social ul li{
+        float: left;
+    }
 }
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width : 960px) and (max-width : 1280px)  {
+    /*------------------------------
+        FOOTER
+    ------------------------------*/
+    .footer-twitter:after    { display: none; }
+    .footer-facebook:after   { display: none; }
+    .footer-vimeo:after      { display: none; }
+    .footer-linkedin:after   { display: none; }
+    .footer-pinterest:after  { display: none; }
+    .footer-instagram:after  { display: none; }
+
+    aside.benefit {
+        width: 30em;
+        height: 30em;
+    }
+}
+
+/* Large Desktops and laptops ----------- */
+@media only screen and (min-width : 1281px) {
+    body {
+        font-size: 12px;
+    }
+    /*Make section widths bigger*/
+    section {
+        width:80%;
+        margin:0 auto;
+    }
+
+    section.benefitsSection {
+        width: 80%;
+        height: 65em;
+    }
+
+    section .insideCircle1 {
+        width:700px;
+        height:700px;
+        z-index: 1;
+        margin:-4em auto 0;
+        top:4em;
+    }
+
+    /*------------------------------
+    SECTION 03 - Skills
+    ------------------------------*/
+
+    aside.benefit {
+        width: 30em;
+        height: 30em;
+    }
+}
+
+    /*------------------------------
+        FOOTER
+    ------------------------------*/
+    .footer-twitter:after    { content: ""; }
+    .footer-facebook:after   { content: "Facebook"; }
+    .footer-vimeo:after      { content: "Vimeo"; }
+    .footer-linkedin:after   { content: "LinkedIn"; }
+    .footer-pinterest:after  { content: "Pinterest"; }
+    .footer-instagram:after  { content: "Instagram"; }
+
 
 @media print,
        (-o-min-device-pixel-ratio: 5/4),
