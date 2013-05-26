@@ -184,12 +184,11 @@ header {
     padding: 0;
     position:fixed;
     width:100%;
-     -webkit-transition: all 250ms cubic-bezier(0.510, 0.005, 0.000, 0.990); 
-   -moz-transition: all 250ms cubic-bezier(0.510, 0.005, 0.000, 0.990); 
-    -ms-transition: all 250ms cubic-bezier(0.510, 0.005, 0.000, 0.990); 
-     -o-transition: all 250ms cubic-bezier(0.510, 0.005, 0.000, 0.990); 
-        transition: all 250ms cubic-bezier(0.510, 0.005, 0.000, 0.990); /* custom */
-
+    -webkit-transition: all 250ms cubic-bezier(0.510, 0.005, 0.000, 0.990); 
+       -moz-transition: all 250ms cubic-bezier(0.510, 0.005, 0.000, 0.990); 
+        -ms-transition: all 250ms cubic-bezier(0.510, 0.005, 0.000, 0.990); 
+         -o-transition: all 250ms cubic-bezier(0.510, 0.005, 0.000, 0.990); 
+            transition: all 250ms cubic-bezier(0.510, 0.005, 0.000, 0.990); /* custom */
     z-index: 3;
 }
 
@@ -382,8 +381,8 @@ footer {
 }
 
 .section02 section img {
-    width: 113%;
-    margin-left: -7.5em;
+    width: 100%;
+    margin-left: 0;
     margin-bottom: 1em;
 }
 
@@ -537,7 +536,7 @@ footer #twitter{
     float: left;
     margin: 0;
     padding: 2.1em;
-    width: 50%;
+    width: 40%;
     text-overflow: ellipsis;
     display: inline;
     white-space: nowrap;
@@ -545,7 +544,7 @@ footer #twitter{
 }
 
 footer nav.social {
-    width: 50%;
+    width: 55%;
     float: right;
 }
 
@@ -563,11 +562,11 @@ footer nav.social ul li {
 
 footer nav.social ul li a {
     display: block;
-    padding: 1.5em;
     color:#6a97ae;
     text-decoration: none;
-    font-size: 1.2em;
     background-color: transparent;
+    padding: 1.1em 1.4em;
+    font-size: 1.7em;
 }
 
 footer nav.social ul li a:hover {
@@ -686,21 +685,61 @@ footer nav.social ul li a:hover {
 
 }*/
 
-/* Tablet */
+/*------------------------------
+    MAIN NAV RESPONSIVE CODE
+------------------------------*/
+
+@media only screen and (max-width : 640px) {
+    header nav.main {
+        float: left;
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+    }
+
+    header nav.main ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    header nav.main ul li {
+        float:left;
+        width: 100%;
+        font-size: 1.4em;
+        margin:0 1em;
+    }   
+}
+
+
+/* Tablet and Mobile*/
 @media only screen and (max-width : 960px) {
+    
+
     section {
         width:80%;
         margin:0 auto;
     }
 
+    h2 {
+        margin: 0 1em 1em;
+        font-size:3.5em;
+        text-align: center;
+    }
+
+    h3 {
+        font-size: 3.5em;
+    }
+
+    /*------------------------------
+        SECTION 03 - Skills
+    ------------------------------*/
+
     article.skill {
         width: 100%;
         padding-bottom: 3em;
     }
-
-    /*------------------------------
-    SECTION 03 - Skills
-    ------------------------------*/
 
     article #circleImage {
         width: 27em;
@@ -745,13 +784,20 @@ footer nav.social ul li a:hover {
         footer
     ------------------------------*/
 
+    footer {
+        font-size: 12px;
+    }
+
     footer #twitter{
         width: 100%;
-        white-space: ellipsis;
     }
 
     footer #twitter p{
         margin: 0 auto;
+        display: inline;
+        white-space: ellipsis;
+        overflow: hidden;
+
     }
 
     footer nav.social {
@@ -784,6 +830,7 @@ footer nav.social ul li a:hover {
         width: 30em;
         height: 30em;
     }
+
 }
 
 /* Large Desktops and laptops ----------- */
@@ -811,12 +858,21 @@ footer nav.social ul li a:hover {
     }
 
     /*------------------------------
-    SECTION 03 - Skills
+        SECTION 03 - Skills
     ------------------------------*/
 
     aside.benefit {
         width: 30em;
         height: 30em;
+    }
+
+    /*------------------------------
+        Footer
+    ------------------------------*/
+
+    footer nav.social ul li a {
+        font-size: 14px;
+        padding: 1.8em 1.4em;
     }
 }
 
