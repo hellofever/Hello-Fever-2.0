@@ -194,7 +194,7 @@ header {
 
 header:hover {
     background-color: rgba(0,0,0,0.3);
-    padding: 1.5em 0;
+    /*padding: 1.5em 0;*/
 }
 
 header h1 {
@@ -354,57 +354,52 @@ h4 {
 ------------------------------*/
 
 a {
-    text-decoration: none;
-    font-weight: 900;
-    font-size: 1.7em;
-    padding:1.2em 3em;
-    background-color: grey;
+    font-size: 2em;
     color: white;
-    
-    
-    /* Animation */
-    -webkit-transition: all 0.05s linear;
-    -moz-transition: all 0.05s linear;
-    -o-transition: all 0.05s linear;
-    -ms-transition: all 0.05s linear;
-    transition: all 0.05s linear;
+    z-index: 2;
+    display:inline-block;
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+    text-align: center;
+}
+
+a span {
+    display:block;
+    padding:1em 2em;
+    position:relative;
+    top:-10px;  
+}
+
+a:hover span {
+    top:-15px;
+    -webkit-transition: all 200ms cubic-bezier(0.290, 0.015, 0.000, 1); /* older webkit */
+-webkit-transition: all 200ms cubic-bezier(0.290, 0.015, 0.000, 1.630); 
+   -moz-transition: all 200ms cubic-bezier(0.290, 0.015, 0.000, 1.630); 
+    -ms-transition: all 200ms cubic-bezier(0.290, 0.015, 0.000, 1.630); 
+     -o-transition: all 200ms cubic-bezier(0.290, 0.015, 0.000, 1.630); 
+        transition: all 200ms cubic-bezier(0.290, 0.015, 0.000, 1.630); /* custom */
+}
+
+a:active span {
+    top:0;
+}
+
+a.red:active {
+    top:2px;
 }
 
 /* button colours as classes */
 
-a.red {
-    background-color:#6e3c3c;
-    border-bottom: 5px solid;
-    border-color: #442222;
-}
+a.red               { background-color:#410b07; }
+a.red span          { background-color:#6e3c3c; }
+a.red:hover span    { background-color:#7c4646; }
+a.red:active        { background-color:#4e2c2c; }
 
-a.red:hover {
-    background-color:#7c4646;
-    position: relative;
-    bottom: 5px;
-}
-
-a.red:active {
-    background-color:#4e2c2c;
-    top:2px;
-}
-
-a.green {
-    background-color:#67a794;
-    border-bottom: 5px solid;
-    border-color: #4a816c;
-}
-
-a.green:hover {
-    background-color:#7abba7;
-    position: relative;
-    bottom: 5px;
-}
-
-a.green:active {
-    background-color:#3c6956;
-    top:2px;
-}
+a.green             { background-color:#4b816b; }
+a.green span        { background-color:#67a794; }
+a.green:hover span  { background-color:#7abba7; }
+a.green:active span { background-color:#3c6956; }
 
 /*------------------------------
     SECTION 01 - Feature
@@ -686,6 +681,7 @@ article.school img {
 }
 
 .contactPage p {
+    font-size: 2em;
     margin-bottom: 2em;
     padding: 0;
 }
@@ -699,7 +695,6 @@ form {
     background: white;
     border-bottom: 5px solid #e7e7e7;
     padding: 3em;
-    padding-bottom:6em;
 }
 
 form.contactForm label, form.contactForm p{
@@ -716,7 +711,8 @@ form.contactForm label {
 input[type="text"], input[type="email"], textarea {
     width: 100%;
     padding:10px;
-    font-size: 1em;
+    font-size: 1.5em;
+    font-family: 'Quicksand', sans-serif;
     background: #f2f2f2;
     border:0;
     border-top:5px solid #e7e7e7;
@@ -724,6 +720,7 @@ input[type="text"], input[type="email"], textarea {
 
 textarea {
     height: 25em;
+    resize:;
 }
 
 
@@ -845,7 +842,7 @@ textarea {
 ------------------------------*/
 
 @media only screen and (max-width : 640px) {
-    header nav.main {
+     /*header nav.main {
         float: left;
         width: 100%;
         height: 0;
@@ -864,12 +861,68 @@ textarea {
         width: 100%;
         font-size: 1.4em;
         margin:0 1em;
-    }   
+    }*/   
+
 }
 
 /*Mobile*/
 
 @media only screen and (min-width : 320px) and (max-width : 480px) {
+    /*------------------------------
+        Mobile Nav
+    ------------------------------*/
+
+    header nav.main {
+        float: left;
+        width: 100%;
+    }
+
+    #mainNav {
+        float: left;
+        width: 100%;
+        height: 57px;
+        overflow: hidden;
+        background-color: black;
+    }
+
+    #mainNav:target {
+        height: 253px;
+    }
+
+    header nav.main ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    header nav.main ul li {
+        float:left;
+        width: 100%;
+        font-size: 1.4em;
+        margin:0;
+        text-align: left;
+        border-top: 1px solid white;
+    }
+
+    header nav.main ul li:last-child{
+        border-bottom: 1px solid white;
+    }
+
+    header nav.main ul li a {
+        text-align: left;
+    }
+
+
+
+
+    .navButton {
+        float:right;
+    }
+
+    /*End Mobile Nav */
+
+
     h2 {
         font-size: 2.5em;
     }
@@ -989,6 +1042,18 @@ textarea {
 /* Tablet and Mobile*/
 @media only screen and (min-width: 481px) and (max-width : 959px) {
 
+    /*------------------------------
+        Main Nav
+    ------------------------------*/
+
+    .navButton {
+        display: none;
+    }
+
+    /*------------------------------
+        End Main Nav
+    ------------------------------*/
+
     section {
         width:80%;
         margin:0 auto;
@@ -1100,22 +1165,37 @@ textarea {
 
     .resumePage h4 {
         text-align: center;
+        padding:0;
     }
 
     article.school {
-       width: 32%
+       width: 33.3%;
+       margin: 0%
     }
 
     article.school img {
         margin: 2em auto;
+        width: 80%;
     }
 
     article.school p {
         display:none;
     }
 
+    .skillSection .skill {
+        width: 32%
+    }
+
+    .skillSection .skill p {
+        display: none;
+    }
+
     .expSection .jobItem img {
-        float:none;
+        float:left;
+    }
+
+    .expSection .jobItem img {
+        float:left;
     }
 
     .expSection .jobText {
@@ -1128,8 +1208,22 @@ textarea {
     }
 
     .expSection .jobItem h5 {
-        float: left;
+        font-size: 1.8em;
     }
+
+    .expSection .jobItem h5.company {
+        float: none;
+        display: block;
+    }
+
+    .expSection .jobItem h5.position {
+        float: none;
+    }
+
+    .expSection .jobItem p {
+        padding: 0;
+    }
+
 
 
 
@@ -1155,6 +1249,18 @@ textarea {
 /* Desktops and laptops ----------- */
 @media only screen and (min-width : 960px) and (max-width : 1440px)  {
     /*------------------------------
+        Main Nav
+    ------------------------------*/
+
+    .navButton {
+        display: none;
+    }
+
+    /*------------------------------
+        End Main Nav
+    ------------------------------*/
+
+    /*------------------------------
         FOOTER
     ------------------------------*/
     .footer-twitter:after    { display: none; }
@@ -1178,6 +1284,18 @@ textarea {
 
 /* Large Desktops and laptops ----------- */
 @media only screen and (min-width : 1441px) {
+    /*------------------------------
+        Main Nav
+    ------------------------------*/
+
+    .navButton {
+        display: none;
+    }
+
+    /*------------------------------
+        End Main Nav
+    ------------------------------*/
+
     body {
         font-size: 12px;
     }

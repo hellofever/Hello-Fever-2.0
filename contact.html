@@ -28,13 +28,17 @@
 
         <!-- Add your site or application content here -->
         <div class="wrapper">    
-            <header class="clearfix">
+            <header class="clearfix" id="mainNav">
                 <h1 class="headerlogo">Hello Fever</h1>
-                <nav class="main" id="mainNav">
+                <div class="navButton">
+                    <a href="#mainNav">Menu</a>
+                    <a href="#">Close</a>
+                </div>
+                <nav class="main">
                     <ul >
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#" class="active">Home</a></li>
                         <li><a href="resume.html">Resumé</a></li>
-                        <li><a href="#" class="active">Contact</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </nav>
             </header>
@@ -52,13 +56,13 @@
                     </p>
                     <p>
                         <label for="inputEmail">Email</label>
-                        <input id="inputEmail" type="email" required>
+                        <input id="inputEmail" type="email" required placeholder="Enter your email">
                     </p>
                     <p>
                         <label for="message">Message</label>
-                        <textarea id="message" required></textarea>
+                        <textarea id="message" required  placeholder="Enter your message"></textarea>
                     </p>
-                    <a href="#" class="green">Submit</a>
+                    <a href="#" class="green"><span>Submit</span></a>
                 </form>
             </div>
         </div> <!-- End section 01 -->
