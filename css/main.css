@@ -146,8 +146,7 @@ body {
     text-transform: none;
     line-height: 1;
     -webkit-font-smoothing: antialiased;
-    margin-right: 0.5em;
-    padding:1px 0 0 1px;
+    margin-right: 3px;
 }
 
 .icon-twitter:before    { content: "\e000"; }
@@ -161,11 +160,28 @@ body {
     MAIN NAV
 ------------------------------*/
 
+/* Nav styling */
+header {
+    border:0 solid black;
+    background-color: white;
+    color:white;
+    padding: 0;
+    position:fixed;
+    width:100%;
+    z-index: 3;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+}
+
+header:hover {
+    background-color: white;
+    /*padding: 1.5em 0;*/`
+}
+
 /*Image replacement*/
 h1.headerlogo {
     margin-left:0.7em;
-    width:150px;
-    height:30px;
+    width:175px;
+    height:1.5em;
     text-indent: -9999px;
     overflow: hidden;
     background:
@@ -174,27 +190,6 @@ h1.headerlogo {
         left top
         transparent;
     background-size:contain;
-}
-
-/* Nav styling */
-header {
-    border:0 solid black;
-    background-color: rgba(255,255,255,0.1);
-    color:white;
-    padding: 0;
-    position:fixed;
-    width:100%;
-    -webkit-transition: all 250ms cubic-bezier(0.510, 0.005, 0.000, 0.990); 
-       -moz-transition: all 250ms cubic-bezier(0.510, 0.005, 0.000, 0.990); 
-        -ms-transition: all 250ms cubic-bezier(0.510, 0.005, 0.000, 0.990); 
-         -o-transition: all 250ms cubic-bezier(0.510, 0.005, 0.000, 0.990); 
-            transition: all 250ms cubic-bezier(0.510, 0.005, 0.000, 0.990); /* custom */
-    z-index: 3;
-}
-
-header:hover {
-    background-color: rgba(0,0,0,0.3);
-    /*padding: 1.5em 0;*/
 }
 
 header h1 {
@@ -209,7 +204,7 @@ header nav.main {
 
 header nav.main ul {
     list-style: none;
-    margin: 0 1em 0;
+    margin: 0 0;
 }
 
 header nav.main ul li {
@@ -218,30 +213,32 @@ header nav.main ul li {
 
 /*Nav A styling*/
 header nav.main a {
-    font-size: 1.0em;
+    position: relative;
+    font-size: 1.2em;
     display: block;
     text-decoration: none;
-    background-color: transparent;
-    padding: 18px;
-    color: rgba(255,255,255,0.3);
-    -webkit-transition: all 0.05s linear;
-    -moz-transition: all 0.05s linear;
-    -o-transition: all 0.05s linear;
-    -ms-transition: all 0.05s linear;
-    transition: all 0.05s linear;
+    padding: 18px 2em;
+    color: #b1da7c;
+    -webkit-transition: all 200ms cubic-bezier(0.290, 0.015, 0.000, 1);;
+    -moz-transition: all 200ms cubic-bezier(0.290, 0.015, 0.000, 1);;
+    -o-transition: all 200ms cubic-bezier(0.290, 0.015, 0.000, 1);;
+    -ms-transition: all 200ms cubic-bezier(0.290, 0.015, 0.000, 1);;
+    transition: all 200ms cubic-bezier(0.290, 0.015, 0.000, 1);;
 }
 
 header nav.main a:hover {
-    color: white;
+    background-color: #b1da7c ;
+    color:white;
 }
 
 header nav.main a:active {
-    color: white;
+    color: #b1da7c ;
 }
 
 /* Add activepage styling*/
 
 header nav.main a.active {
+    background-color: #b1da7c ;
     color:white;
 }
 
@@ -252,29 +249,40 @@ header nav.main a.active {
 footer {
     padding: 0;
     margin: 0;
+    position: relative;
 }
 
 footer p {
-    margin: 0;
+    margin: 0;  
+    margin-left:10px;
     padding: 0;
-    font-size: 1.2em;
     color: #6a97ae;
+    display: inline;
+}
+
+footer p span {
+    font-size: 25px;
+    display: inline;
 }
 
 footer #twitter{
     float: left;
     margin: 0;
-    padding: 2.1em;
     width: 40%;
-    text-overflow: ellipsis;
-    display: inline;
-    white-space: nowrap;
     overflow: hidden;
+    padding:19px;
+}
+
+footer p.twitterFeed {
+    font-size: 1.6em;
+    white-space: nowrap;
 }
 
 footer nav.social {
     width: 55%;
     float: right;
+    font-size: 25px;
+    font-weight: 900;
 }
 
 footer nav.social ul {
@@ -294,7 +302,7 @@ footer nav.social ul li a {
     color:#6a97ae;
     text-decoration: none;
     background-color: transparent;
-    padding: 1.1em 1.4em;
+    padding: 15px;
 }
 
 footer nav.social ul li a:hover {
@@ -353,7 +361,7 @@ h4 {
     Button Styles
 ------------------------------*/
 
-a {
+a.bodyButton {
     font-size: 2em;
     color: white;
     z-index: 2;
@@ -364,14 +372,14 @@ a {
     text-align: center;
 }
 
-a span {
+a.bodyButton span {
     display:block;
     padding:1em 2em;
     position:relative;
     top:-10px;  
 }
 
-a:hover span {
+a.bodyButton:hover span {
     top:-15px;
     -webkit-transition: all 200ms cubic-bezier(0.290, 0.015, 0.000, 1); /* older webkit */
 -webkit-transition: all 200ms cubic-bezier(0.290, 0.015, 0.000, 1.630); 
@@ -381,11 +389,11 @@ a:hover span {
         transition: all 200ms cubic-bezier(0.290, 0.015, 0.000, 1.630); /* custom */
 }
 
-a:active span {
+a.bodyButton:active span {
     top:0;
 }
 
-a.red:active {
+a.bodyButton:active {
     top:2px;
 }
 
@@ -627,6 +635,10 @@ article.school {
 
 article.school img {
     margin: 2em auto;
+}
+
+.skillSection {
+    margin-bottom: 3em;
 }
 
 .expSection, .schoolSection, .skillSection {
@@ -882,11 +894,16 @@ textarea {
         width: 100%;
         height: 57px;
         overflow: hidden;
-        background-color: black;
+        background-color: white;
+        -webkit-transition: all 250ms cubic-bezier(0.510, 0.005, 0.000, 0.990); 
+           -moz-transition: all 250ms cubic-bezier(0.510, 0.005, 0.000, 0.990); 
+            -ms-transition: all 250ms cubic-bezier(0.510, 0.005, 0.000, 0.990); 
+             -o-transition: all 250ms cubic-bezier(0.510, 0.005, 0.000, 0.990); 
+                transition: all 250ms cubic-bezier(0.510, 0.005, 0.000, 0.990); /* custom */
     }
 
     #mainNav:target {
-        height: 253px;
+        height: 250px;
     }
 
     header nav.main ul {
@@ -899,36 +916,50 @@ textarea {
     header nav.main ul li {
         float:left;
         width: 100%;
-        font-size: 1.4em;
+        font-size: 1.2em;
         margin:0;
         text-align: left;
-        border-top: 1px solid white;
     }
 
     header nav.main ul li:last-child{
-        border-bottom: 1px solid white;
     }
 
     header nav.main ul li a {
         text-align: left;
+        background: #ffffff; /* Old browsers */
+        background: -moz-linear-gradient(top, #ffffff 65%, #ededed 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(65%,#ffffff), color-stop(100%,#ededed)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top, #ffffff 65%,#ededed 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top, #ffffff 65%,#ededed 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top, #ffffff 65%,#ededed 100%); /* IE10+ */
+        background: linear-gradient(to bottom, #ffffff 65%,#ededed 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
     }
 
+    header nav.main ul li a.active {
+        background: #b1da7c; 
+    }
 
-
-
-    .navButton {
-        float:right;
+    .navButton a {
+        float:left;
+        color:black;
+        background: grey;
+        display: block;
     }
 
     /*End Mobile Nav */
 
 
     h2 {
-        font-size: 2.5em;
+        font-size: 3em;
     }
 
     h3 {
         font-size: 2.5em;
+    }
+
+    h4 {
+        font-size: 2em;
     }
 
     section {
@@ -957,8 +988,7 @@ textarea {
     ------------------------------*/
 
     section.benefitsSection {
-        width: 80%;
-        margin-top: 2em;
+        width: 95%;
     }
 
     section.benefitsSection img {
@@ -1037,6 +1067,14 @@ textarea {
     .contactPage {
         width:95%;
     }
+
+    form {
+        padding:1.5em;
+    }
+
+    form.contactForm label {
+        margin-bottom: 0.5em;
+    }
 }
 
 /* Tablet and Mobile*/
@@ -1048,6 +1086,15 @@ textarea {
 
     .navButton {
         display: none;
+    }
+
+    /*Nav A styling*/
+    header nav.main a {
+        font-size: 1em;
+        display: block;
+        text-decoration: none;
+        padding: 20px 1em;
+        color: #b1da7c;
     }
 
     /*------------------------------
@@ -1070,6 +1117,14 @@ textarea {
     }
 
     /*------------------------------
+        SECTION 02 - Intro
+    ------------------------------*/
+
+    .section02 article {
+        width: 90%;
+    }
+
+    /*------------------------------
         SECTION 03 - Skills
     ------------------------------*/
 
@@ -1088,7 +1143,7 @@ textarea {
     ------------------------------*/
 
     section.benefitsSection {
-        width: 80%;
+        width: 95%;
         margin-top: 2em;
     }
 
@@ -1188,6 +1243,20 @@ textarea {
 
     .skillSection .skill p {
         display: none;
+    }
+
+    .skillSection .skill {
+        width: 100%;
+        padding-bottom: 3em;
+    }
+
+    .skillSection #circleImage {
+        width: 30em;
+        height: 30em;
+    }
+
+    .skillSection #circleImage img {
+        width: 110%
     }
 
     .expSection .jobItem img {
@@ -1292,6 +1361,11 @@ textarea {
         display: none;
     }
 
+    header nav.main a {
+        padding: 20px 2em;
+    }
+
+
     /*------------------------------
         End Main Nav
     ------------------------------*/
@@ -1326,6 +1400,8 @@ textarea {
         width: 30em;
         height: 30em;
     }
+
+    
 
     /*------------------------------
         Resume
