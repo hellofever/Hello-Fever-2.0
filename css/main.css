@@ -253,33 +253,28 @@ footer {
 }
 
 footer p {
-    margin: 0;  
     margin-left:10px;
-    padding: 0;
     color: #6a97ae;
     display: inline;
 }
 
+footer #twitter {
+    float: left;
+    padding:18px 0 20px 18px;
+    width: 50%;
+}
+
 footer p span {
     font-size: 25px;
-    display: inline;
 }
 
-footer #twitter{
-    float: left;
-    margin: 0;
-    width: 40%;
-    overflow: hidden;
-    padding:19px;
-}
-
-footer p.twitterFeed {
-    font-size: 1.6em;
+footer p span.tweet {
+    font-size: 1.3em;
     white-space: nowrap;
 }
 
 footer nav.social {
-    width: 55%;
+    width: 30%;
     float: right;
     font-size: 25px;
     font-weight: 900;
@@ -302,7 +297,7 @@ footer nav.social ul li a {
     color:#6a97ae;
     text-decoration: none;
     background-color: transparent;
-    padding: 15px;
+    padding: 13px 15px 17px 15px;
 }
 
 footer nav.social ul li a:hover {
