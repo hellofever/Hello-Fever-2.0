@@ -217,7 +217,7 @@ header nav.main a {
     font-size: 1.2em;
     display: block;
     text-decoration: none;
-    padding: 18px 2em;
+    padding: 18px 1.5em;
     color: #b1da7c;
     -webkit-transition: all 200ms cubic-bezier(0.290, 0.015, 0.000, 1);;
     -moz-transition: all 200ms cubic-bezier(0.290, 0.015, 0.000, 1);;
@@ -258,23 +258,15 @@ footer p {
     display: inline;
 }
 
-footer #twitter {
+footer #signature {
     float: left;
     padding:18px 0 20px 18px;
-    width: 50%;
-}
-
-footer p span {
-    font-size: 25px;
-}
-
-footer p span.tweet {
-    font-size: 1.3em;
+    width: 30%;
     white-space: nowrap;
 }
 
 footer nav.social {
-    width: 30%;
+    min-width: 30%;
     float: right;
     font-size: 25px;
     font-weight: 900;
@@ -297,7 +289,12 @@ footer nav.social ul li a {
     color:#6a97ae;
     text-decoration: none;
     background-color: transparent;
-    padding: 13px 15px 17px 15px;
+    padding: 11px;
+    -webkit-transition: all 250ms cubic-bezier(0.510, 0.005, 0.000, 0.990); 
+           -moz-transition: all 250ms cubic-bezier(0.510, 0.005, 0.000, 0.990); 
+            -ms-transition: all 250ms cubic-bezier(0.510, 0.005, 0.000, 0.990); 
+             -o-transition: all 250ms cubic-bezier(0.510, 0.005, 0.000, 0.990); 
+                transition: all 250ms cubic-bezier(0.510, 0.005, 0.000, 0.990); /* custom */
 }
 
 footer nav.social ul li a:hover {
@@ -1057,8 +1054,53 @@ textarea {
     }
 
     /*------------------------------
+        footer
+    ------------------------------*/
+
+    footer {
+        padding-bottom: 2em;
+    }
+
+    footer #signature {
+        font-size: 1.5em;
+        float: none;
+        padding:1.5em;
+        width: 100%;
+        text-align: center;
+        white-space: normal;
+    }
+
+    footer nav.social {
+        min-width: 30%;
+        float: right;
+        font-size: 30px;
+        font-weight: 900;
+    }
+
+    footer nav.social ul {
+        float: none;
+    }
+
+    footer nav.social ul li a {
+        padding: 10px;
+
+    }
+
+    footer nav.social ul li a:hover {
+        color:white;
+        background-color: #6a97ae;
+    }
+
+    .footer-twitter:after, .footer-facebook:after, .footer-vimeo:after, .footer-linkedin:after, .footer-pinterest:after, .footer-instagram:after    { 
+        display: none; 
+        text-indent: -9999;
+        overflow: hidden;
+    }
+
+    /*------------------------------
         CONTACT
     ------------------------------*/
+
     .contactPage {
         width:95%;
     }
@@ -1171,39 +1213,7 @@ textarea {
         FOOTER
     ------------------------------*/
 
-    footer {
-        font-size: 12px;
-    }
-
-    footer #twitter{
-        width: 100%;
-    }
-
-    footer #twitter p{
-        margin: 0 auto;
-        display: inline;
-        white-space: ellipsis;
-        overflow: hidden;
-
-    }
-
-    footer nav.social {
-        width: 100%;
-        float: left;
-    }
-
-    footer nav.social ul {
-        float: left;
-    }
-
-    footer nav.social ul li{
-        float: left;
-    }
-
-    footer nav.social ul li a {
-        font-size: 1.2em;
-        padding: 1.8em 1.4em;
-    }
+    
 
     /*------------------------------
         RESUMÉ
@@ -1256,10 +1266,8 @@ textarea {
 
     .expSection .jobItem img {
         float:left;
-    }
-
-    .expSection .jobItem img {
-        float:left;
+        width: 230px;
+        margin-bottom: 10px;
     }
 
     .expSection .jobText {
@@ -1288,9 +1296,24 @@ textarea {
         padding: 0;
     }
 
+    /*------------------------------
+        footer
+    ------------------------------*/
 
+    footer nav.social ul li a {
+        font-size: 16px;
+        padding: 33px;
+    }
 
+    footer nav.social ul li a {
+        padding: 21px;
+    }
 
+    .footer-twitter:after, .footer-facebook:after, .footer-vimeo:after, .footer-linkedin:after, .footer-pinterest:after, .footer-instagram:after    { 
+        display: none; 
+        text-indent: -9999;
+        overflow: hidden;
+    }
 
     /*------------------------------
         CONTACT
@@ -1324,20 +1347,24 @@ textarea {
         End Main Nav
     ------------------------------*/
 
-    /*------------------------------
-        FOOTER
-    ------------------------------*/
-    .footer-twitter:after    { display: none; }
-    .footer-facebook:after   { display: none; }
-    .footer-vimeo:after      { display: none; }
-    .footer-linkedin:after   { display: none; }
-    .footer-pinterest:after  { display: none; }
-    .footer-instagram:after  { display: none; }
-
-    aside.benefit {
+aside.benefit {
         width: 30em;
         height: 30em;
     }
+
+    /*------------------------------
+        FOOTER
+    ------------------------------*/
+    .footer-twitter:after, .footer-facebook:after, .footer-vimeo:after, .footer-linkedin:after, .footer-pinterest:after, .footer-instagram:after    { 
+        display: none; 
+        text-indent: -9999;
+        overflow: hidden;
+    }
+
+
+    
+
+    
 
     /*------------------------------
         Resume
@@ -1412,9 +1439,14 @@ textarea {
     ------------------------------*/
 
     footer nav.social ul li a {
-        font-size: 14px;
-        padding: 1.8em 1.4em;
+        font-size: 16px;
+        padding: 33px;
     }
+
+    footer nav.social ul li a {
+        padding: 21px;
+    }
+
 
     /*------------------------------
         CONTACT
@@ -1427,12 +1459,12 @@ textarea {
     /*------------------------------
         FOOTER
     ------------------------------*/
-    .footer-twitter:after    { content: ""; }
-    .footer-facebook:after   { content: "Facebook"; }
-    .footer-vimeo:after      { content: "Vimeo"; }
-    .footer-linkedin:after   { content: "LinkedIn"; }
-    .footer-pinterest:after  { content: "Pinterest"; }
-    .footer-instagram:after  { content: "Instagram"; }
+    .footer-twitter:after    { content: "Twitter";    margin-left:10px; }
+    .footer-facebook:after   { content: "Facebook";   margin-left:10px; }
+    .footer-vimeo:after      { content: "Vimeo";      margin-left:10px;}
+    .footer-linkedin:after   { content: "LinkedIn";   margin-left:10px;}
+    .footer-pinterest:after  { content: "Pinterest";  margin-left:10px;}
+    .footer-instagram:after  { content: "Instagram";  margin-left:10px;}
 
 
 @media print,
