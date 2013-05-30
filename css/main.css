@@ -93,6 +93,7 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+
 /*Box Sizing*/
 *{
     box-sizing:border-box;
@@ -196,6 +197,10 @@ header h1 {
     float:left;
 }
 
+.navButton > a {
+    display: block;
+}
+
 header nav.main {
     font-size: 1.4em;
     font-weight: 900;
@@ -205,6 +210,7 @@ header nav.main {
 header nav.main ul {
     list-style: none;
     margin: 0 0;
+    display: table;
 }
 
 header nav.main ul li {
@@ -250,6 +256,7 @@ footer {
     padding: 0;
     margin: 0;
     position: relative;
+    box-shadow: 0 -5px 5px rgba(0,0,0,0.1);
 }
 
 footer p {
@@ -870,6 +877,9 @@ textarea {
 }
 
 /*Mobile*/
+#mainNav > a {
+    display:none;
+}
 
 @media only screen and (min-width : 320px) and (max-width : 480px) {
     /*------------------------------
@@ -881,10 +891,46 @@ textarea {
         width: 100%;
     }
 
-    #mainNav {
-        float: left;
-        width: 100%;
+    /*Establish menu button styling*/
+
+    #mainNav > a {
+        margin: 0px;
+        font-size: 25px;
+        padding: 7px 20px;
+        color: white;
+        background-color: #b1da7c;
+        width: 61px;
         height: 57px;
+        position: absolute;
+        z-index: 10;
+        top: 0px;
+        right: 0;
+        border-bottom: 5px solid #749853;
+
+        /*aniamtion properties*/
+    }
+
+    /*Make toggle switch
+    If mainNav is not the target, make the first anchor tag display block;
+    If mainNav is target, make the last anchor tag display block;
+    */
+
+    #mainNav:not( :target ) > a:first-of-type,
+        #mainNav:target > a:last-of-type
+        {
+            display: block;
+        }
+
+    /*Style close button to look pressed down*/
+    #mainNav:target > a:last-of-type {
+        background: #9ec46c;
+        padding-left: 22px;
+        border-top: 5px solid #749853;
+        border-bottom:0;
+    }
+
+    #mainNav {
+        height: 0px;
         overflow: hidden;
         background-color: white;
         -webkit-transition: all 250ms cubic-bezier(0.510, 0.005, 0.000, 0.990); 
@@ -895,7 +941,7 @@ textarea {
     }
 
     #mainNav:target {
-        height: 250px;
+        height: 193px;
     }
 
     header nav.main ul {
@@ -911,6 +957,7 @@ textarea {
         font-size: 1.2em;
         margin:0;
         text-align: left;
+        border-top: 1px solid rgba(0,0,0,0.1);
     }
 
     header nav.main ul li:last-child{
@@ -930,13 +977,6 @@ textarea {
 
     header nav.main ul li a.active {
         background: #b1da7c; 
-    }
-
-    .navButton a {
-        float:left;
-        color:black;
-        background: grey;
-        display: block;
     }
 
     /*End Mobile Nav */
@@ -1059,19 +1099,19 @@ textarea {
 
     footer {
         padding-bottom: 2em;
+        
     }
 
     footer #signature {
-        font-size: 1.5em;
-        float: none;
-        padding:1.5em;
+        padding: 18px 0 20px 18px;
         width: 100%;
         text-align: center;
-        white-space: normal;
     }
 
     footer nav.social {
-        min-width: 30%;
+        display: table;
+        width: 100%;
+        
         float: right;
         font-size: 30px;
         font-weight: 900;
@@ -1079,9 +1119,12 @@ textarea {
 
     footer nav.social ul {
         float: none;
+        margin: 0 autol
     }
 
     footer nav.social ul li a {
+        display: table-cell;
+        text-align: center;
         padding: 10px;
 
     }
@@ -1300,6 +1343,11 @@ textarea {
         footer
     ------------------------------*/
 
+    footer #signature {
+        text-align: center;
+        width: 100%
+    }
+
     footer nav.social ul li a {
         font-size: 16px;
         padding: 33px;
@@ -1309,6 +1357,7 @@ textarea {
         padding: 21px;
     }
 
+    
     .footer-twitter:after, .footer-facebook:after, .footer-vimeo:after, .footer-linkedin:after, .footer-pinterest:after, .footer-instagram:after    { 
         display: none; 
         text-indent: -9999;

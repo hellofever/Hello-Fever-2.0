@@ -22,6 +22,10 @@
         <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
 
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
+        <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+        <!-- Script to add animations to front of site and ensure preload. Add this to your script once you've written up a JS file. -->
 
     </head>
     <body>
@@ -31,15 +35,14 @@
 
         <!-- Start Header-->
         <div class="wrapper">    
-            <header class="clearfix" id="mainNav">
-                <h1 class="headerlogo"><a href="index.html">Hello Fever</h1></h1>
-                <div class="navButton">
-                    <a href="#mainNav">☰ Menu</a>
-]                </div>
-                <nav class="main">
-                    <ul >
-                        <li><a href="#"><span>Home</span></a></li>
-                        <li><a href="resume.html" class="animated"><span>Resumé</span></a></li>
+            <header class="clearfix">
+                <h1 class="headerlogo"><a href="index.html">Hello Fever</a></h1>
+                <nav class="main"  id="mainNav">
+                    <a href="#mainNav" title="Show Nav">☰</a>
+                    <a href="#" title="Hide Nav">X</a>
+                    <ul>
+                        <li><a href="#" class="active"><span>Home</span></a></li>
+                        <li><a href="resume.html"><span>Resumé</span></a></li>
                         <li><a href="contact.html"><span>Contact</span></a></li>
                     </ul>
                 </nav>
@@ -122,12 +125,11 @@
                 </div>
                 <nav class="social">
                     <ul class="clearfix">
-                        <li><a href=""><span class="icon-twitter"></span><span class="footer-twitter"></span></a></li>
-                        <li><a href=""><span class="icon-instagram"></span><span class="footer-instagram"></span></a></li>
-                        <li><a href=""><span class="icon-pinterest"></span><span class="footer-pinterest"></span></a></li>
-                        <li><a href=""><span class="icon-linkedin"></span><span class="footer-linkedin"></span></a></li>
-                        <li><a href=""><span class="icon-vimeo"></span><span class="footer-vimeo"></span></a></li>
-                        <li><a href=""><span class="icon-facebook"></span><span class="footer-facebook"></span></a></li>
+                        <li><a href="https://twitter.com/hellofeverrrr" target="_blank"><span class="icon-twitter"></span><span class="footer-twitter"></span></a></li>
+                        <li><a href="http://instagram.com/hellofever" target="_blank"><span class="icon-instagram"></span><span class="footer-instagram"></span></a></li>
+                        <li><a href="http://pinterest.com/hellofever/" target="_blank"><span class="icon-pinterest"></span><span class="footer-pinterest"></span></a></li>
+                        <li><a href="http://au.linkedin.com/in/hellofever" target="_blank"><span class="icon-linkedin"></span><span class="footer-linkedin"></span></a></li>
+                        <li><a href="http://vimeo.com/user10412440" target="_blank"><span class="icon-vimeo"></span><span class="footer-vimeo"></span></a></li>
                     </ul>
                 </nav>   
             </footer> 
