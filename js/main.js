@@ -3,9 +3,10 @@
 $(document).ready(function() {
 
 	//MOBILE MENU
-	//menu button reveals up and down
 	$('#menuToggle').click(function() {
+		//menu button reveals up and down
 		$('#mainNav').slideToggle('fast');
+		$('#menuToggle').toggleClass('close')
 	});
 
 });

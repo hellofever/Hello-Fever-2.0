@@ -201,8 +201,9 @@ header h1 {
     float:left;
 }
 
-.navButton > a {
-    display: block;
+/*Mobile*/
+.menuButton {
+    display: none;
 }
 
 header nav.main {
@@ -281,26 +282,16 @@ footer nav.social {
     float: right;
     font-size: 25px;
     font-weight: 900;
+    text-align: right;
+    margin-top: 11px;
 }
 
-footer nav.social ul {
-    float: right;
-    padding: 0;
-    margin: 0;
-}
 
-footer nav.social ul li {
-    float: left;
-    padding: 0;
-    margin: 0;
-}
-
-footer nav.social ul li a {
-    display: block;
+footer nav.social  a {
     color:#6a97ae;
     text-decoration: none;
     background-color: transparent;
-    padding: 11px;
+    padding: 14px;
     -webkit-transition: all 250ms cubic-bezier(0.510, 0.005, 0.000, 0.990); 
            -moz-transition: all 250ms cubic-bezier(0.510, 0.005, 0.000, 0.990); 
             -ms-transition: all 250ms cubic-bezier(0.510, 0.005, 0.000, 0.990); 
@@ -308,7 +299,7 @@ footer nav.social ul li a {
                 transition: all 250ms cubic-bezier(0.510, 0.005, 0.000, 0.990); /* custom */
 }
 
-footer nav.social ul li a:hover {
+footer nav.social a:hover {
     color:white;
     background-color: #6a97ae;
 }
@@ -880,14 +871,16 @@ textarea {
 
 }
 
-/*Mobile*/
 
 
 @media only screen and (min-width : 320px) and (max-width : 480px) {
     /*------------------------------
         Mobile Nav
     ------------------------------*/
-
+    .menuButton {
+        display: block;
+    }
+    
     header nav.main {
         float: left;
         width: 100%;
@@ -908,7 +901,6 @@ textarea {
         font-size: 20px;
         padding: 6px 0px 0px 17px;
         margin: 0;
-
     }
 
     .menuButton p{
@@ -916,12 +908,20 @@ textarea {
         margin: 0;
     }
 
+    /*add styling to button when pressed*/
+    .close {
+        background: #9ec46c;
+        border-top: 5px solid #749853;
+        border-bottom: 0;
+    }
+
     #mainNav {
         display: none;
         overflow: hidden;
         background-color: white;
-        
     }
+
+
 
     /*#mainNav .open  { height: 0; }*/
 
@@ -977,7 +977,7 @@ textarea {
         margin:0 auto;
     }
 
-    .section01, .section02, .section03, .section04 { padding:10em 0; }
+    .section01, .section02, .section03, .section04 { padding:10em 1em; }
 
     /*------------------------------
         SECTION 03 - Skills
@@ -999,6 +999,7 @@ textarea {
 
     section.benefitsSection {
         width: 95%;
+        margin-top: 4em;
     }
 
     section.benefitsSection img {
@@ -1017,7 +1018,7 @@ textarea {
     aside.benefit {
         position:relative;
         padding:1em;
-        margin:0 auto 3em;
+        margin:0 auto 1.5em;
         width: 100%%;
         border-radius: 3em;
         text-align: center;
@@ -1075,39 +1076,36 @@ textarea {
         footer
     ------------------------------*/
 
-    footer {
-        padding-bottom: 2em;
-        
+    footer p {
+        margin: 0;
     }
 
     footer #signature {
-        padding: 18px 0 20px 18px;
+        padding: 18px 0 10px;
         width: 100%;
         text-align: center;
     }
 
     footer nav.social {
         display: table;
-        width: 100%;
-        
-        float: right;
+        width: 100%; 
         font-size: 30px;
         font-weight: 900;
     }
 
-    footer nav.social ul {
+    footer nav.social {
         float: none;
         margin: 0 autol
     }
 
-    footer nav.social ul li a {
+    footer nav.social a {
         display: table-cell;
         text-align: center;
         padding: 10px;
 
     }
 
-    footer nav.social ul li a:hover {
+    footer nav.social a:hover {
         color:white;
         background-color: #6a97ae;
     }
@@ -1221,7 +1219,7 @@ textarea {
     aside.benefit {
         position:relative;
         padding:1em;
-        margin:0 auto 3em;
+        margin:0 auto 1.5em;
         width: 100%%;
         border-radius: 3em;
         text-align: center;
@@ -1321,18 +1319,34 @@ textarea {
         footer
     ------------------------------*/
 
+    footer p {
+        margin: 0;
+    }
+
     footer #signature {
         text-align: center;
-        width: 100%
+        width: 100%;
+        padding: 18px 0 
     }
 
-    footer nav.social ul li a {
-        font-size: 16px;
-        padding: 33px;
+    footer nav.social {
+        width: 100%; 
+        font-size: 30px;
+        font-weight: 900;
+        float: none;
+        margin: 0 auto;
+        text-align: center;
     }
 
-    footer nav.social ul li a {
-        padding: 21px;
+
+    footer nav.social a {
+        padding: 10px;
+
+    }
+
+    footer nav.social a:hover {
+        color:white;
+        background-color: #6a97ae;
     }
 
     
@@ -1467,13 +1481,11 @@ aside.benefit {
         Footer
     ------------------------------*/
 
-    footer nav.social ul li a {
+    footer nav.social a {
         font-size: 16px;
-        padding: 33px;
-    }
-
-    footer nav.social ul li a {
-        padding: 21px;
+        padding: 23px;
+        margin: 0;
+        text-align: center;
     }
 
 
