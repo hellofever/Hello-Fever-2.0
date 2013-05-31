@@ -1,9 +1,11 @@
 // //JS Document
 
-// $(document).ready(function() {
+$(document).ready(function() {
 
-// 	$('#mobileMenu').click(function() {
-// 		$('#mainNav').slideToggle();
-// 	});
+	//MOBILE MENU
+	//menu button reveals up and down
+	$('#menuToggle').click(function() {
+		$('#mainNav').slideToggle('fast');
+	});
 
-// });
+});
