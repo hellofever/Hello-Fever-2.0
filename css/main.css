@@ -195,6 +195,7 @@ h1.headerlogo {
         left top
         transparent;
     background-size:contain;
+
 }
 
 header h1 {
@@ -228,7 +229,7 @@ header nav.main a {
     font-size: 1.2em;
     display: block;
     text-decoration: none;
-    padding: 18px 1.5em;
+    padding: 18px 1.3em;
     color: #b1da7c;
     -webkit-transition: all 200ms cubic-bezier(0.290, 0.015, 0.000, 1);;
     -moz-transition: all 200ms cubic-bezier(0.290, 0.015, 0.000, 1);;
@@ -254,7 +255,7 @@ header nav.main a.active {
 }
 
 /*------------------------------
-    SECTION 04 - Footer
+    Footer
 ------------------------------*/
 
 footer {
@@ -473,6 +474,7 @@ footer {
 }
 
 article.skill {
+    position: relative;
     padding: 0;
     width: 32%;
     float: left;
@@ -492,6 +494,20 @@ article #circleImage {
     border: 10px solid white;
 }
 
+article .highlightCircle {
+    color: white;
+    background: #7ac7c4;
+    position:absolute;
+    top:10px;
+    right: -7px;
+    width: 3em;
+    height: 3em;
+    font-size:2.5em;
+    font-weight: 900;
+    border-radius: 100%;
+    padding: 19px 0px 0px 3px;
+    z-index: 1;
+}
 
 
 /*------------------------------
@@ -847,48 +863,19 @@ textarea {
     MAIN NAV RESPONSIVE CODE
 ------------------------------*/
 
-@media only screen and (max-width : 640px) {
-     /*header nav.main {
-        float: left;
-        width: 100%;
-        height: 0;
-        overflow: hidden;
-    }
-
-    header nav.main ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        width: 100%;
-    }
-
-    header nav.main ul li {
-        float:left;
-        width: 100%;
-        font-size: 1.4em;
-        margin:0 1em;
-    }*/   
-
-}
-
-
 
 @media only screen and (min-width : 320px) and (max-width : 480px) {
     /*------------------------------
         Mobile Nav
     ------------------------------*/
-    .menuButton {
-        display: block;
-    }
+
+    /*Show Mobile Button*/
+    .menuButton { display: block; }
     
     header nav.main {
         float: left;
         width: 100%;
     }
-
-    /*Establish menu button styling*/
-
-   
 
     /*Style close button to look pressed down*/
     .menuButton {
@@ -920,8 +907,6 @@ textarea {
         overflow: hidden;
         background-color: white;
     }
-
-
 
     /*#mainNav .open  { height: 0; }*/
 
@@ -960,17 +945,9 @@ textarea {
     /*End Mobile Nav */
 
 
-    h2 {
-        font-size: 3em;
-    }
-
-    h3 {
-        font-size: 2.5em;
-    }
-
-    h4 {
-        font-size: 2em;
-    }
+    h2 { font-size: 3em; }
+    h3 { font-size: 2.5em; }
+    h4 { font-size: 2em; }
 
     section {
         width:95%;
@@ -992,6 +969,16 @@ textarea {
         width: 27em;
         height: 27em;
     }
+
+    article .highlightCircle {
+        top:10px;
+        right: 5%;
+        width: 3em;
+        height: 3em;
+        font-size:2.5em;
+        padding:20px 0px 0px 3px;
+    }   
+
 
     /*------------------------------
         SECTION 04 - Benefits
@@ -1073,7 +1060,7 @@ textarea {
     }
 
     /*------------------------------
-        footer
+        FOOTER
     ------------------------------*/
 
     footer p {
@@ -1193,6 +1180,15 @@ textarea {
         width: 27em;
         height: 27em;
     }
+
+    article .highlightCircle {
+        top:10px;
+        right: 5%;
+        width: 3em;
+        height: 3em;
+        font-size:2.5em;
+        padding:20px 0px 0px 3px;
+    }   
 
     /*------------------------------
         SECTION 04 - Benefits
@@ -1390,7 +1386,7 @@ textarea {
         End Main Nav
     ------------------------------*/
 
-aside.benefit {
+    aside.benefit {
         width: 30em;
         height: 30em;
     }
@@ -1402,17 +1398,7 @@ aside.benefit {
         display: none; 
         text-indent: -9999;
         overflow: hidden;
-    }
-
-
-    
-
-    
-
-    /*------------------------------
-        Resume
-    ------------------------------*/
-
+    }`
 
 }
 
@@ -1427,7 +1413,7 @@ aside.benefit {
     }
 
     header nav.main a {
-        padding: 20px 2em;
+        padding: 20px 1.3em;
     }
 
 
@@ -1466,8 +1452,6 @@ aside.benefit {
         height: 30em;
     }
 
-    
-
     /*------------------------------
         Resume
     ------------------------------*/
@@ -1487,7 +1471,6 @@ aside.benefit {
         margin: 0;
         text-align: center;
     }
-
 
     /*------------------------------
         CONTACT
