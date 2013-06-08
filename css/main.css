@@ -331,6 +331,8 @@ section {
 .section03 { background: url(../img/bg_red.jpg) repeat left top transparent; }
 .section04 { background: url(../img/bg_cream.jpg) repeat left top transparent; }
 
+/*Additional Styles*/
+
 p {
     color: white;
     font-size: 1.4em;
@@ -451,6 +453,66 @@ footer {
     font-size: 2em;
 }
 
+/*------------------------------
+    SECTION 02A - Work projects
+------------------------------*/
+
+.section02a {
+    padding: 4em 0 0 ;
+    background: black;
+}
+
+#workSlider {
+    width: 100%;
+}
+
+.section02a article {
+    position: relative;
+    background-color: grey;
+    width: 25%;
+    float:left;
+    height: 500px;
+    overflow: hidden;
+    -webkit-transition: all 300ms cubic-bezier(0.770, 0.000, 0.130, 0.990); 
+   -moz-transition: all 300ms cubic-bezier(0.770, 0.000, 0.130, 0.990); 
+    -ms-transition: all 300ms cubic-bezier(0.770, 0.000, 0.130, 0.990); 
+     -o-transition: all 300ms cubic-bezier(0.770, 0.000, 0.130, 0.990); 
+        transition: all 300ms cubic-bezier(0.770, 0.000, 0.130, 0.990); /* custom */
+}
+
+.section02a .textArea {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    width: 100%;
+    padding: 1.5em;
+    text-align: center;
+    /*display: none;*/
+}
+
+.section02a h3 {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.section02a .homeWork {
+    font-size: 2em;
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+}
+
+.section02a p {
+    z-index: 1;
+    margin: 0.5em;
+}
+
+.section02a article img {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+}
 
 /*------------------------------
     SECTION 03 - Skills
@@ -645,6 +707,17 @@ article.school {
 
 article.school img {
     margin: 2em auto;
+}
+
+article.skill ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1.4em;
+}
+
+article.skill ul li{
+    color:#f4c9c6;
 }
 
 .skillSection {
