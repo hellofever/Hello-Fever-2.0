@@ -51,11 +51,9 @@ $(document).ready(function() {
    		//divide image width by element width
    		$projWidth = $(this).css('width');
    		$projImg = $('img', this).css('width');
-		
-		var imgPos = $('img', this).position();
 
 		//change imgpos left to match offset
-		moveImage = ((parseInt($projImg) / parseInt($projWidth)) * relX * -1)/2;
+		moveImage = ((parseInt($projImg) / parseInt($projWidth)) * relX * -1)*0.4;
 		console.log('moveImage = ' + moveImage)
 
 		$('img', this).css('left', moveImage);
