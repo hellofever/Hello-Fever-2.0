@@ -458,12 +458,13 @@ footer {
 ------------------------------*/
 
 .section02a {
-    padding: 4em 0 0 ;
-    background: black;
+    padding: 4em 0 10em ;
+   background: url(../img/bg_blue.jpg) repeat left top transparent; 
 }
 
 #workSlider {
     width: 100%;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
 }
 
 .section02a article {
@@ -473,17 +474,22 @@ footer {
     float:left;
     height: 500px;
     overflow: hidden;
-    -webkit-transition: all 300ms cubic-bezier(0.770, 0.000, 0.130, 0.990); 
+     -webkit-transition: all 300ms cubic-bezier(0.770, 0.000, 0.130, 0.990); 
    -moz-transition: all 300ms cubic-bezier(0.770, 0.000, 0.130, 0.990); 
     -ms-transition: all 300ms cubic-bezier(0.770, 0.000, 0.130, 0.990); 
      -o-transition: all 300ms cubic-bezier(0.770, 0.000, 0.130, 0.990); 
         transition: all 300ms cubic-bezier(0.770, 0.000, 0.130, 0.990); /* custom */
 }
 
+.section02a article.off {
+    opacity: 0.2;
+}
+
 .section02a .textArea {
     position: absolute;
     bottom: 0;
-    background: rgba(0,0,0,0.5);
+
+    
     width: 100%;
     padding: 1.5em;
     text-align: center;
@@ -512,6 +518,18 @@ footer {
     top: 0px;
     left: 0px;
     height: 100%;
+    /*-webkit-transition: all 300ms cubic-bezier(0.455, 0.030, 0.515, 0.955); 
+   -moz-transition: all 300ms cubic-bezier(0.455, 0.030, 0.515, 0.955); 
+    -ms-transition: all 300ms cubic-bezier(0.455, 0.030, 0.515, 0.955); 
+     -o-transition: all 300ms cubic-bezier(0.455, 0.030, 0.515, 0.955); 
+        transition: all 300ms cubic-bezier(0.455, 0.030, 0.515, 0.955);*/ /* easeInOutQuad */
+
+}
+
+.section02a article img.move {
+    left: -50%;
+    height: 100%;
+
 }
 
 /*------------------------------
@@ -1030,6 +1048,16 @@ textarea {
     .section01, .section02, .section03, .section04 { padding:10em 1em; }
 
     /*------------------------------
+        SECTION 02a - Work
+    ------------------------------*/
+
+    .section02a article {
+        width: 50%;
+        height: 150px;
+    }
+
+
+    /*------------------------------
         SECTION 03 - Skills
     ------------------------------*/
 
@@ -1238,6 +1266,16 @@ textarea {
 
     .section02 article {
         width: 90%;
+    }
+
+    /*------------------------------
+        SECTION 02a - Work
+    ------------------------------*/
+
+
+    .section02a article {
+        width: 50%;
+        height: 300px;
     }
 
     /*------------------------------
