@@ -14,8 +14,10 @@
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
+
         <!-- Magnific Popup core CSS file -->
-        <link rel="stylesheet" href="css/magnific-popup.css"> 
+        <link rel="stylesheet" href="css/magnific-popup.css">
+
 
         <!-- Add Google Font -->
         <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400,700' rel='stylesheet' type='text/css'>
@@ -23,10 +25,6 @@
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
         <script src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
         <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-
-        <!-- Script to add lightbox -->
-        <!-- Magnific Popup core JS file -->
-        <script src="js/jquery.magnific-popup.js"></script> 
 
 
     </head>
@@ -42,16 +40,27 @@
                 <div class="menuButton" id="menuToggle"><p>☰</p></div>
                 <nav class="main"  id="mainNav">
                     <ul>
-                        <li><a href="index.html"><span>Home</span></a></li>
+                        <li><a href="#" class="active"><span>Home</span></a></li>
                         <li><a href="resume.html"><span>Resumé</span></a></li>
                         <li><a href="contact.html"><span>Contact</span></a></li>
                     </ul>
                 </nav>
+                <nav class="main">
+            <!-- <ul>
+                <li><a href="#section01"><span>Introduction</span></a></li>
+                <li><a href="#section02"><span>Who is Hello Fever?</span></a></li>
+                <li><a href="#section02a"><span>Work</span></a></li>
+                <li><a href="#section03"><span>Skills</span></a></li>
+                <li><a href="#section04"><span>Coffee?</span></a></li>
+            </ul> -->
+        </nav>
             </header>
         </div> <!-- End Header -->
 
+
+
         <!-- Start Section 01 - Intro -->
-        <div class="wrapper section01">
+        <div class="wrapper section01" id="section01">
             <section>
                 <h2>Your new digital designer.</h2>
                 <img src="img/featureImage.png" alt="Hello Fever Survival Kit">
@@ -59,7 +68,7 @@
         </div> <!-- End section 01 -->
 
         <!-- Start Section 02 - Description -->
-        <div class="wrapper section02">
+        <div class="wrapper section02" id="section02">
             <section>
                 <img src="img/logo_white.svg" alt="Hello Fever Logo">
                 <article>
@@ -70,43 +79,50 @@
         </div> <!-- End Section 02 - Description -->
 
         
-        <div class="wrapper section02a clearfix">
+        <div class="wrapper section02a clearfix" id="section02a">
             <h3>Latest Work</h3>
             <div id="workSlider" class="clearfix">
-                    
                 <article>
-                    <img src="img/project_01.jpg">
-                    <div class="textArea">
-                        <h2 class="homeWork">Hoyts Kiosk</h2>
-                        <p>Design and Animation</p>
-                    </div>
+                    <a class="popup-vimeo" href="https://vimeo.com/61583890">
+                        <img src="img/project_01.jpg" alt="Hoyts Kiosk Cinema Ad">
+                        <div class="textArea">
+                            <h2 class="homeWork">Hoyts Kiosk</h2>
+                            <p>Design and Animation</p>
+                        </div>
+                    </a>
                 </article>
                 <article>
-                    <img src="img/project_02.jpg">
-                    <div class="textArea">
-                        <h2 class="homeWork">Top 10 Bad Business Handshakes</h2>
-                        <p>Design and Animation</p>
-                    </div>
+                    <a class="popup-vimeo" href="https://vimeo.com/67779158">
+                        <img src="img/project_02.jpg" alt="Top 10 Bad Business Handshakes Online Video">
+                        <div class="textArea">
+                            <h2 class="homeWork">Top 10 Bad Business Handshakes</h2>
+                            <p>Design and Animation</p>
+                        </div>
+                    </a>
                 </article>
                 <article>
-                    <img src="img/project_03.jpg">
-                    <div class="textArea">
-                        <h2 class="homeWork">Skittles</h2>
-                        <p>Design and Animation</p>
-                    </div>
+                    <a href="http://touchtherainbow.com.au/" target="blank">
+                        <img src="img/project_03.jpg" alt="Skittles - Touch the Rainbow">
+                        <div class="textArea">
+                            <h2 class="homeWork">Skittles</h2>
+                            <p>Design and Animation</p>
+                        </div>
+                    </a>
                 </article>
                 <article>
-                    <img src="img/project_04.jpg">
-                    <div class="textArea">
-                        <h2 class="homeWork">Tapit</h2>
-                        <p>Design, Development and Animation</p>
-                    </div>
+                     <a href="http://touchtherainbow.com.au/" target="blank">
+                        <img src="img/project_04.jpg" alt="Tapit Character">
+                        <div class="textArea">
+                            <h2 class="homeWork">Tapit</h2>
+                            <p>Design, Development and Animation</p>
+                        </div>
+                    </a>
                 </article>
             </div>
         </div> 
 
         <!-- Start Section 03 - Skills-->
-        <div class="wrapper section03 clearfix">
+        <div class="wrapper section03 clearfix" id="section03">
             <section class="clearfix">
                 <article class="skill">
                     <div id="circleImage"><img src="img/03_image01.png" alt="Animation Timeline"></div>
@@ -131,7 +147,7 @@
         </div> <!-- End Section 03 - Skills -->
 
         <!-- Start Section 04 - Benefits-->
-         <div class="wrapper section04 clearfix">
+         <div class="wrapper section04 clearfix" id="section04">
             <h2>How will this benefit your agency?</h2>
             <section class="benefitsSection clearfix">    
                 <img src="img/04_glasses.png">
@@ -175,6 +191,10 @@
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+
+        <!-- Magnific Popup core JS file -->
+        <script src="js/jquery.magnific-popup.min.js"></script> 
+
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
 

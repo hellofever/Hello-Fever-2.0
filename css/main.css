@@ -115,6 +115,11 @@ body {
     min-width: 320px;
 }
 
+a {
+    color: white;
+    text-decoration: none;
+}
+
 /*font icons*/
 @font-face {
     font-family: 'icomoon';
@@ -164,22 +169,29 @@ body {
 /* Nav styling */
 header {
     border:0 solid black;
-    background-color: white;
     color:white;
     padding: 0;
     position:fixed;
     width:100%;
     z-index: 3;
-    box-shadow: 0 5px 5px rgba(0,0,0,0.1);
-    -webkit-transition: all 200ms cubic-bezier(0.290, 0.015, 0.000, 1);;
-    -moz-transition: all 200ms cubic-bezier(0.290, 0.015, 0.000, 1);;
-    -o-transition: all 200ms cubic-bezier(0.290, 0.015, 0.000, 1);;
-    -ms-transition: all 200ms cubic-bezier(0.290, 0.015, 0.000, 1);;
-    transition: all 200ms cubic-bezier(0.290, 0.015, 0.000, 1);;
+    top:0px;
+    background-color: white;
+    /*box-shadow: 0 5px 5px rgba(0,0,0,0.1);*/
+      -webkit-transition: all 300ms cubic-bezier(0.290, 0.015, 0.000, 1);;
+    -moz-transition: all 300ms cubic-bezier(0.290, 0.015, 0.000, 1);;
+    -o-transition: all 300ms cubic-bezier(0.290, 0.015, 0.000, 1);;
+    -ms-transition: all 300ms cubic-bezier(0.290, 0.015, 0.000, 1);;
+    transition: all 300ms cubic-bezier(0.290, 0.015, 0.000, 1);;
 }
 
-header:hover {
-    background-color: white;
+header.init {
+    top:0;
+}
+
+header.expanded {
+    top:0;
+    background-color: rgba(255,255,255,0.9);
+    box-shadow: 0 5px 5px rgba(0,0,0,0.1);
 }
 
 /*Image replacement*/
@@ -195,7 +207,6 @@ h1.headerlogo {
         left top
         transparent;
     background-size:contain;
-
 }
 
 header h1 {
@@ -203,25 +214,11 @@ header h1 {
 }
 
 /*Mobile*/
-.menuButton {
-    display: none;
-}
+.menuButton { display: none; }
 
-header nav.main {
-    font-size: 1.4em;
-    font-weight: 900;
-    float: right;
-}
-
-header nav.main ul {
-    list-style: none;
-    margin: 0 0;
-    display: table;
-}
-
-header nav.main ul li {
-    float:left;
-}
+header nav.main { font-size: 1.4em; font-weight: 900; float: right; }
+header nav.main ul { list-style: none; margin: 0; display: table; }
+header nav.main ul li { float:left; }
 
 /*Nav A styling*/
 header nav.main a {
@@ -229,8 +226,8 @@ header nav.main a {
     font-size: 1.2em;
     display: block;
     text-decoration: none;
-    padding: 18px 1.3em;
-    color: #b1da7c;
+    padding: 1em;
+    color: rgba(177,218,124,1);
     -webkit-transition: all 200ms cubic-bezier(0.290, 0.015, 0.000, 1);;
     -moz-transition: all 200ms cubic-bezier(0.290, 0.015, 0.000, 1);;
     -o-transition: all 200ms cubic-bezier(0.290, 0.015, 0.000, 1);;
@@ -239,20 +236,36 @@ header nav.main a {
 }
 
 header nav.main a:hover {
+    color: white;
+    background-color: rgba(177,218,124,1);
+}
+
+header nav.main a.active {
+    background-color:rgba(177,218,124, 0.5);
+    color:white;
+}
+
+header nav.main a.active:hover  {
+    color: white;
+    background-color: rgba(177,218,124,1);
+}
+
+
+/*header nav.main a:hover {
     background-color: #b1da7c ;
     color:white;
 }
 
 header nav.main a:active {
     color: #b1da7c ;
-}
+}*/
 
 /* Add activepage styling*/
 
-header nav.main a.active {
+/*header nav.main a.active {
     background-color: #b1da7c ;
     color:white;
-}
+}*/
 
 /*------------------------------
     Footer
@@ -326,10 +339,10 @@ section {
 
 .section01, .section02, .section03, .section04 { min-height:30em; }
 
-.section01 { background: url(../img/bg_blue.jpg) repeat left top transparent; }
-.section02 { background: url(../img/bg_green.jpg) repeat left top transparent; }
-.section03 { background: url(../img/bg_red.jpg) repeat left top transparent; }
-.section04 { background: url(../img/bg_cream.jpg) repeat left top transparent; }
+.section01 { background: url(../img/bg_blue.jpg) repeat left top transparent fixed; }
+.section02 { background: url(../img/bg_green.jpg) repeat left top transparent fixed; }
+.section03 { background: url(../img/bg_red.jpg) repeat left top transparent fixed; }
+.section04 { background: url(../img/bg_cream.jpg) repeat left top transparent fixed; }
 
 /*Additional Styles*/
 
@@ -457,6 +470,51 @@ footer {
     SECTION 02A - Work projects
 ------------------------------*/
 
+/*Add magnific popup functionality and animations*/
+/**
+* Simple fade transition,
+*/
+.mfp-fade.mfp-bg {
+    opacity: 0;
+    -webkit-transition: all 0.15s ease-out; 
+    -moz-transition: all 0.15s ease-out; 
+    transition: all 0.15s ease-out;
+}
+.mfp-fade.mfp-bg.mfp-ready {
+    opacity: 0.8;
+}
+.mfp-fade.mfp-bg.mfp-removing {
+    opacity: 0;
+}
+
+.mfp-fade.mfp-wrap .mfp-content {
+    opacity: 0;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+
+    -webkit-transform: translateY(-20px) scale(0.5) perspective( 600px ) rotateX( 10deg );
+    -moz-transform: translateY(-20px) scale(0.5) perspective( 600px ) rotateX( 10deg );
+    -ms-transform: translateY(-20px) scale(0.5) perspective( 600px ) rotateX( 10deg );
+    -o-transform: translateY(-20px) scale(0.5) perspective( 600px ) rotateX( 10deg );
+    transform: translateY(-20px) scale(0.5) perspective( 600px ) rotateX( 10deg );
+}
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+    opacity: 1;
+    top: 0;
+    -webkit-transform: translateY(0) scale(1) perspective( 600px ) rotateX( 0 ); 
+    -moz-transform: translateY(0) scale(1) perspective( 600px ) rotateX( 0 ); 
+    -ms-transform: translateY(0) scale(1) perspective( 600px ) rotateX( 0 ); 
+    -o-transform: translateY(0) scale(1) perspective( 600px ) rotateX( 0 ); 
+    transform: translateY(0) scale(1) perspective( 600px ) rotateX( 0 ); 
+}
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+    opacity: 0;
+    }
+/*End magnific popup functionality*/
+
+
 .section02a {
     padding: 4em 0 10em ;
    background: url(../img/bg_blue.jpg) repeat left top transparent; 
@@ -469,26 +527,25 @@ footer {
 
 .section02a article {
     position: relative;
-    background-color: grey;
+    background-color: black;
     width: 25%;
     float:left;
     height: 500px;
     overflow: hidden;
      -webkit-transition: all 300ms cubic-bezier(0.770, 0.000, 0.130, 0.990); 
-   -moz-transition: all 300ms cubic-bezier(0.770, 0.000, 0.130, 0.990); 
-    -ms-transition: all 300ms cubic-bezier(0.770, 0.000, 0.130, 0.990); 
-     -o-transition: all 300ms cubic-bezier(0.770, 0.000, 0.130, 0.990); 
-        transition: all 300ms cubic-bezier(0.770, 0.000, 0.130, 0.990); /* custom */
+       -moz-transition: all 300ms cubic-bezier(0.770, 0.000, 0.130, 0.990); 
+        -ms-transition: all 300ms cubic-bezier(0.770, 0.000, 0.130, 0.990); 
+         -o-transition: all 300ms cubic-bezier(0.770, 0.000, 0.130, 0.990); 
+            transition: all 300ms cubic-bezier(0.770, 0.000, 0.130, 0.990); /* custom */
 }
 
 .section02a article.off {
-    opacity: 0.2;
+    opacity: 0.1;
 }
 
 .section02a .textArea {
     position: absolute;
     bottom: 0;
-
     
     width: 100%;
     padding: 1.5em;
@@ -516,7 +573,7 @@ footer {
 .section02a article img {
     position: absolute;
     top: 0px;
-    left: 0px;
+    left: -60%;
     height: 100%;
     -webkit-transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
    -moz-transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
@@ -525,11 +582,13 @@ footer {
         transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); /* easeOutCubic */
 }
 
-.section02a article img.move {
-    left: -50%;
-    height: 100%;
-
-}
+/*.section02a article img:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1); 
+}*/
 
 /*------------------------------
     SECTION 03 - Skills
@@ -962,6 +1021,10 @@ textarea {
     /*Show Mobile Button*/
     .menuButton { display: block; }
     
+    header {
+        background-color: white;
+    }
+
     header nav.main {
         float: left;
         width: 100%;
@@ -1237,7 +1300,6 @@ textarea {
         display: block;
         text-decoration: none;
         padding: 20px 1em;
-        color: #b1da7c;
     }
 
     /*------------------------------

@@ -393,24 +393,3 @@ img.mfp-img {
   top: 0;
   right: 0;
   padding-top: 0; }
-
-/* animate in */
-.my-mfp-slide-bottom.mfp-ready .zoom-anim-dialog {
-  opacity: 1;
-  -webkit-transform: translateY(0) perspective( 600px ) rotateX( 0 ); 
-  -moz-transform: translateY(0) perspective( 600px ) rotateX( 0 ); 
-  -ms-transform: translateY(0) perspective( 600px ) rotateX( 0 ); 
-  -o-transform: translateY(0) perspective( 600px ) rotateX( 0 ); 
-  transform: translateY(0) perspective( 600px ) rotateX( 0 ); 
-}
-
-/* animate out */
-.my-mfp-slide-bottom.mfp-removing .zoom-anim-dialog {
-  opacity: 0;
-
-  -webkit-transform: translateY(-10px) perspective( 600px ) rotateX( 10deg ); 
-  -moz-transform: translateY(-10px) perspective( 600px ) rotateX( 10deg ); 
-  -ms-transform: translateY(-10px) perspective( 600px ) rotateX( 10deg ); 
-  -o-transform: translateY(-10px) perspective( 600px ) rotateX( 10deg ); 
-  transform: translateY(-10px) perspective( 600px ) rotateX( 10deg ); 
-}
